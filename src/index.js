@@ -60,7 +60,6 @@ function copyBluePrints(name, type, callback) {
             if (!e || (e && e.code === 'EEXIST')) {
                 fs.createReadStream(__dirname + '/blueprints/component/__path__/__name__.component.ts.__')
                     .pipe(fs.createWriteStream(__dirname + `/tmp/${name}/${name}.component.ts`));
-                    .pipe(fs.createWriteStream(__dirname + `/tmp/${name}/${name}.component.android.css`));
                 fs.createReadStream(__dirname + '/blueprints/component/__path__/__name__.component.html.__')
                     .pipe(fs.createWriteStream(__dirname + `/tmp/${name}/${name}.component.html`));
                 callback(true)
