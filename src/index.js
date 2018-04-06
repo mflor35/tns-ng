@@ -61,9 +61,6 @@ function copyBluePrints(name, type, callback) {
             if (!e || (e && e.code === 'EEXIST')) {
                 fs.createReadStream(__dirname + '/blueprints/component/__path__/__name__.component.ts.__')
                     .pipe(fs.createWriteStream(__dirname + `/tmp/${name}/${name}.component.ts`));
-                fs.createReadStream(__dirname + '/blueprints/component/__path__/__name__.component.ios.css.__')
-                    .pipe(fs.createWriteStream(__dirname + `/tmp/${name}/${name}.component.ios.css`));
-                fs.createReadStream(__dirname + '/blueprints/component/__path__/__name__.component.android.css.__')
                     .pipe(fs.createWriteStream(__dirname + `/tmp/${name}/${name}.component.android.css`));
                 fs.createReadStream(__dirname + '/blueprints/component/__path__/__name__.component.html.__')
                     .pipe(fs.createWriteStream(__dirname + `/tmp/${name}/${name}.component.html`));
@@ -118,15 +115,6 @@ function copyComponentToProjectDir(name, completePath, callback) {
             fs.createReadStream(__dirname + `/tmp/${name}/${name}.component.ts`)
                 .pipe(fs.createWriteStream(current + `/${prefix}/${name}.component.ts`));
             console.log(chalk.green(' create'), `${prefix}/${name}.component.ts`)
-
-            fs.createReadStream(__dirname + `/tmp/${name}/${name}.component.ios.css`)
-                .pipe(fs.createWriteStream(current + `/${prefix}/${name}.component.ios.css`));
-            console.log(chalk.green(' create'), `${prefix}/${name}.component.ios.css`)
-
-            fs.createReadStream(__dirname + `/tmp/${name}/${name}.component.android.css`)
-                .pipe(fs.createWriteStream(current + `/${prefix}/${name}.component.android.css`));
-            console.log(chalk.green(' create'), `${prefix}/${name}.component.android.css`)
-
             fs.createReadStream(__dirname + `/tmp/${name}/${name}.component.html`)
                 .pipe(fs.createWriteStream(current + `/${prefix}/${name}.component.html`));
             console.log(chalk.green(' create'), `${prefix}/${name}.component.html`)
