@@ -37,7 +37,6 @@ function generateComponent(path) {
 
     let args = {
         COMPONENT_NAME: upperCamelCase(name),
-        COMPONENT_STYLES_URL: `./${name}.component.css`,
         COMPONENT_TEMPLATE_URL: `./${name}.component.html`,
         COMPONENT_FILE_NAME: name,
         COMPONENT_SELECTOR: `ns-${name}`
