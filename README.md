@@ -45,8 +45,6 @@ tng g component feature/my-component
 # This will create four files:
 __my-component__/__my-component__.component.html
 __my-component__/__my-component__.component.ts
-__my-component__/__my-component__.component.android.css
-__my-component__/__my-component__.component.ios.css
 ```
 You can find all possible types in the table below:
 
